@@ -1,0 +1,11 @@
+<h2><%= @list.name %></h2>
+
+<%= @list.movies.each do |movie| %>
+    <p><%= movie.title %></p>
+    <p><%= movie.overview %></p>
+    <p><%= movie.rating %></p>
+    <p><%= image_tag movie.poster_url, { class: "img-circle", id: "logo" } %></p>
+  <% end %>
+
+<p>  <%= link_to "Back to lists", "/lists", class: "btn btn-primary"%>
+<p>  <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary"%>
